@@ -1,5 +1,13 @@
 A Simple Vue render for TVML
 
+```shell
+cd tvml
+npm install
+npx webpack serve
+
+Open app/TVMLVue/TVMLVue.xcodeproj and run on tvOS simulator
+```
+
 What works:
 
 + supports SFC and defineComponents
@@ -11,6 +19,6 @@ seperate CSS file not work
 
 screenshots:
 
-![](vue-screenshot.png)
+![](./resources/vue-screenshot.png)
 
-![](debug.png)
+![](./resources/debug.png)
