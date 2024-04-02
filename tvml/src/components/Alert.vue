@@ -3,42 +3,23 @@
       <title :style="'color: red;'">Hello World!</title>
       <description>Welcom to tvOS, num: {{num}}</description>
       <text v-bind:class="{color: true}">hello</text>
-      <button @select="handleClick" @holdselect="handleHoldClick">
+      <button @select="handleClick">
         <text>Add</text>
       </button>
     </alertTemplate>
 </template>
 
-<script>
-export default {
-    name: 'alert',
-    components: {
-    },
-    data() {
-        return {
-            text: "demo",
-            num: 0
-        }
-    },
-    mounted() {
-        console.log("hello App")
-    },
-    inject: ['onTest'],
-    methods: {
-        handleClick() {
-            this.num++
-            if (this.num == 3) {
-                this.onTest && this.onTest()
-            }
-        },
-        handleHoldClick() {
-            this.num--
-        }
-    }
+<script setup>
+import { ref } from '../lib/VueRender'
+const text = ref('demo')
+const num = ref(0)
+const handleClick = () => {
+    num.value++
 }
 </script>
+
 <style>
 .color {
-    color: rgba(0, 255, 0, 0.8);
+  color: rgba(0, 255, 0, 0.8);
 }
 </style>
