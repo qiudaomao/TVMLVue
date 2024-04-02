@@ -3,7 +3,7 @@
       <title :style="'color: red;'">Hello World!</title>
       <description>Welcom to tvOS, num: {{num}}</description>
       <text v-bind:class="{color: true}">hello</text>
-      <button @select="handleClick" @holdselect="handleHoldClick">
+      <button @select="handleClick">
         <text>Add {{text}}</text>
       </button>
     </alertTemplate>
@@ -39,3 +39,8 @@ export function showTest() {
   navigationDocument.pushDocument(doc)
 }
 </script>
+<style>
+.color {
+    color: rgba(255, 0, 0, 0.8);
+}
+</style>
