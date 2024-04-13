@@ -10,12 +10,10 @@
 </template>
 
 <script setup>
-import { ref } from '../lib/VueRender'
+import { ref, inject } from '../lib/VueRender'
 const text = ref('demo')
 const num = ref(0)
-const handleClick = () => {
-    num.value++
-}
+const handleClick = inject('onSelect')
 </script>
 
 <style>

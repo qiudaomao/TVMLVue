@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { createApp, defineComponent, ref, reactive, inject } from '../lib/VueRender'
+import { createVueApp, defineComponent, ref, reactive, inject } from '../lib/VueRender'
 
 const Test = defineComponent({
   setup() {
@@ -34,7 +34,7 @@ const Test = defineComponent({
 export default Test;
 
 export function showTest() {
-  const { app, doc } = createApp(Test);
+  const { app, doc } = createVueApp(Test);
   app.mountDoc();
   navigationDocument.pushDocument(doc)
 }
